@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext {
+
+        // Sdk and tools
+//        appMinSdkVersion = 17
+//        appTargetSdkVersion = 26
+//        appCompileSdkVersion = 26
+//        appBuildToolsVersion = '26.0.1'
+//        appVersionName = '0.1.7'
+//
+//        rx2Version = '2.1.0'
+//        retrofitVersion = '2.3.0'
+//        gsonVersion = '2.8.0'
+//
+//        // App dependencies
+//        supportLibraryVersion = '26.0.0-alpha1'
+//        constraintLayoutVersion = '1.0.2'
+//
+//        // switch debug
+//        governmentDebug = false
+//        workOnlineDebug = false
+//        newsDebug = false
+//        imDebug = false
+//        videoDebug = false
+//        retailersDebug = false
+        imDebug=true;
+    }
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.novoda:bintray-release:0.5.0'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
